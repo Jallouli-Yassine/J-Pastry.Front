@@ -1,0 +1,120 @@
+<style>
+  /* Custom CSS for the "+" separator */
+  .separator {
+    font-size: 6rem;
+    color: #ccc;
+  }
+</style>
+<section class="product-area section-space">
+  <div class="container mt-5">
+    <div class="section-title text-center">
+      <h2 class="title">Latest Pack</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+    </div>
+    <div class="row">
+      <!--== Start Product Area Wrapper ==-->
+      <section
+        
+        style="padding-top: 0"
+        class="product-area section-space"
+      >
+        <div class="pack-item product-item-border container">
+          <div
+            [ngClass]="{
+              'justify-content-center align-items-center':
+              lastPack.products.length <= 3
+            }"
+            class="row mb-n6 product-items-two"
+          >
+            <div class="pr-5"></div>
+            <ng-container
+           
+              *ngFor="
+                let product of lastPack.products;
+                let last = last;
+                let first = first
+              "
+            >
+              <div
+                [style.width.rem]="lastPack.products.length <= 3 ? 19.5 : 17"
+                style="width: 17rem"
+                class="col-sm-6 col-lg-3 mb-6"
+              >
+                <!--== Start Product Item ==-->
+                <div class="product-item">
+                  <a class="product-thumb" href="shop-single-product.html">
+                    <img
+                      src="assets/images/shop/p2.jpg"
+                      width="300"
+                      height="286"
+                      alt="Image-HasTech"
+                    />
+                  </a>
+                  <span class="badges">New</span>
+                  <div class="product-action">
+                    <button
+                      type="button"
+                      class="product-action-btn action-btn-quick-view"
+                      data-bs-toggle="modal"
+                      data-bs-target="#action-QuickViewModal"
+                    >
+                      <i class="fa fa-expand"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="product-action-btn action-btn-cart"
+                      data-bs-toggle="modal"
+                      data-bs-target="#action-CartAddModal"
+                    >
+                      <i class="fa fa-shopping-cart"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="product-action-btn action-btn-compare"
+                      data-bs-toggle="modal"
+                      data-bs-target="#action-CompareModal"
+                    >
+                      <i class="fa fa-exchange"></i>
+                    </button>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="title">
+                      <a href="shop-single-product.html">Casual Prince</a>
+                    </h4>
+                    <div class="price">
+                      $650.00 <span class="price-old">$650.00</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="info-btn-wishlist"
+                      data-bs-toggle="modal"
+                      data-bs-target="#action-WishlistModal"
+                    >
+                      <i class="fa fa-heart-o"></i>
+                    </button>
+                  </div>
+                </div>
+                <!--== End prPduct Item ==-->
+              </div>
+              <div *ngIf="!last" class="col-1 separator">+</div>
+            </ng-container>
+
+            <div class="buyPack row justify-content-center text-center">
+              <!-- Create a clickable background shape using an anchor -->
+              <a href="#" class="col-5 row price background-shape">
+                <div class="col-12">
+                  <i class="fa fa-shopping-cart"></i> Add Pack to Cart
+                </div>
+                <div class="col-12"><span class="">$1500.00</span> <span class="price-old">  $1500.00</span> </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Product Area Wrapper ==-->
+    </div>
+  </div>
+</section>

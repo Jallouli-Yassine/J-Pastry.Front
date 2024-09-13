@@ -1,0 +1,67 @@
+p {
+    color: #733729;
+  }
+  .price {
+    align-items: baseline;
+    color: #400601;
+    display: flex;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .btn {
+    width: 15%;
+    background-color: #8e5f4b;
+    border: 1px solid #8e5f4b;
+    box-shadow: none;
+    border-radius: 30px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    line-height: 1.2;
+    padding: 11px 26px 9px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+  }
+  .background-shape {
+    background-color: #CC9883; /* Background color */
+    color: #fff; /* Text color on the background */
+    padding: 15px 20px; /* Adjust padding as needed */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center-align text horizontally */
+    transition: background-color 0.3s ease; /* Add a smooth transition on hover */
+    cursor: pointer; /* Change cursor on hover to indicate interactivity */
+  }
+  
+  .background-shape:hover {
+    background-color: #8e5f4b; /* Change background color on hover */
+  }
+  
+  .price-old {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px; /* Adjust spacing between price and old price */
+    text-decoration: line-through;
+    text-decoration-color: #8e5f4b;
+  }
+  
+  /* Adjust button styles (optional) */
+  .background-shape button {
+    background-color: #8e5f4b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px; /* Adjust spacing between text and button */
+    cursor: pointer;
+  }
+  
+  .background-shape button:hover {
+    background-color: #6d472e; /* Change button background color on hover */
+  }
+  
