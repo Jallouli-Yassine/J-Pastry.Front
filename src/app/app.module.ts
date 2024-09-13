@@ -20,6 +20,8 @@ import { ContactComponent } from './private/contact/contact.component';
 import { MapComponent } from './private/map/map.component';
 import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.component';
 import { ProfileComponent } from './private/profile/profile.component';
+import { HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ProfileComponent } from './private/profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
