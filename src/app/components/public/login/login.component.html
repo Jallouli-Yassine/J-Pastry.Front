@@ -1,0 +1,39 @@
+<div class="login-register-content">
+  <div class="login-register-title mb-30">
+    <h2>Login</h2>
+    <p>
+      Welcome back to our elegant abaya fashion portal. Please enter your username and password to access
+      your account.
+    </p>
+  </div>
+  <div class="login-register-style login-register-pr">
+    <form [formGroup]="credForm" (ngSubmit)="login()">
+      <div class="login-register-input">
+        <input formControlName="email" type="text" name="user-name" placeholder="email address" />
+      </div>
+      <div *ngIf="email?.touched && email?.invalid">
+        <small *ngIf="email?.errors!['required']" class="text-danger">email is required</small>
+      </div>
+      <div class="login-register-input">
+        <input formControlName="password" type="password" name="user-password" placeholder="Password" />
+
+        <div class="forgot">
+          <a href="#">Forgot your password?</a>
+        </div>
+
+
+      </div>
+      <div *ngIf="password?.touched && password?.invalid">
+        <small *ngIf="password?.errors!['required']" class="text-danger">password is required</small>
+      </div>
+
+      <div class="remember-me-btn">
+        <input type="checkbox" />
+        <label>Remember me</label>
+      </div>
+      <div class="btn-register">
+        <input [disabled]="credForm.invalid" type="submit" value="login" class="btn-register-now">
+      </div>
+    </form>
+  </div>
+</div>

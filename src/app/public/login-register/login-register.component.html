@@ -20,124 +20,31 @@
     <!--== End Page Header Area Wrapper ==-->
 
 
-<!--== Start Login Wrapper ==-->
-<section class="login-register-area section-space">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 login-register-border">
-        <div class="login-register-content">
-          <div class="login-register-title mb-30">
-            <h2>Login</h2>
-            <p>
-              Welcome back to our elegant abaya fashion portal. Please enter your username and password to access your account.
-            </p>
+    <!--== Start Login Wrapper ==-->
+    <section class="login-register-area section-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 login-register-border">
+            <app-login></app-login>
           </div>
-          <div class="login-register-style login-register-pr">
-            <form action="#" method="post">
-              <div class="login-register-input">
-                <input
-                  type="text"
-                  name="user-name"
-                  placeholder="email address"
-                />
-              </div>
-              <div class="login-register-input">
-                <input
-                  type="password"
-                  name="user-password"
-                  placeholder="Password"
-                />
-                <!--
-                <div class="forgot">
-                  <a href="#">Forgot your password?</a>
-                </div>
-                -->
-
-              </div>
-              <div class="remember-me-btn">
-                <input type="checkbox" />
-                <label>Remember me</label>
-              </div>
-              <div class="btn-register">
-                <a class="btn-register-now" href="account.html">Login</a>
-              </div>
-            </form>
+          <div class="col-md-7">
+           <app-register></app-register>
           </div>
         </div>
       </div>
-      <div class="col-md-7">
-        <div class="login-register-content login-register-pl">
-          <div class="login-register-title mb-30">
-            <h2>Register</h2>
-            <p>
-              Create a new account to embrace the world of abaya fashion. Enjoy a personalized shopping experience with us.
-            </p>
-          </div>
-          <div class="login-register-style">
-            <form action="#" method="post">
-              <div class="login-register-input">
-                <input
-                  type="text"
-                  name="user-name"
-                  placeholder="first name"
-                />
-              </div>
-              <div class="login-register-input">
-                <input
-                  type="text"
-                  name="user-name"
-                  placeholder="last name"
-                />
-              </div>
-              <div class="login-register-input">
-                <input
-                  type="number"
-                  name="user-name"
-                  placeholder="phone"
-                />
-              </div>
-              <div class="login-register-input">
-                <input
-                  type="text"
-                  name="user-name"
-                  placeholder="E-mail address"
-                />
-              </div>
-              <div class="login-register-input">
-                <input
-                  type="password"
-                  name="user-password"
-                  placeholder="Password"
-                />
-              </div>
-
-              <div class="btn-register">
-                <a class="btn-register-now" href="account.html">Register</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--== End Login Wrapper ==-->
+    </section>
+    <!--== End Login Wrapper ==-->
 
   </main>
 
   <!--== Start Footer Area Wrapper ==-->
-    <app-footer></app-footer>
+  <app-footer></app-footer>
   <!--== End Footer Area Wrapper ==-->
 
   <!--== Scroll Top Button ==-->
   <app-scroll-to-top></app-scroll-to-top>
   <!--== Start Product Quick View Modal ==-->
-  <aside
-    class="product-cart-view-modal modal fade"
-    id="action-QuickViewModal"
-    tabindex="-1"
-    aria-hidden="true"
-  >
+  <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -153,32 +60,17 @@
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <div class="thumb-item">
-                            <img
-                              src="assets/images/shop/details/m1.jpg"
-                              alt="Image"
-                              width="640"
-                              height="710"
-                            />
+                            <img src="assets/images/shop/details/m1.jpg" alt="Image" width="640" height="710" />
                           </div>
                         </div>
                         <div class="swiper-slide">
                           <div class="thumb-item">
-                            <img
-                              src="assets/images/shop/details/m2.jpg"
-                              alt="Image"
-                              width="640"
-                              height="710"
-                            />
+                            <img src="assets/images/shop/details/m2.jpg" alt="Image" width="640" height="710" />
                           </div>
                         </div>
                         <div class="swiper-slide">
                           <div class="thumb-item">
-                            <img
-                              src="assets/images/shop/details/m3.jpg"
-                              alt="Image"
-                              width="640"
-                              height="710"
-                            />
+                            <img src="assets/images/shop/details/m3.jpg" alt="Image" width="640" height="710" />
                           </div>
                         </div>
                       </div>
@@ -211,38 +103,17 @@
                   <div class="product-details-color-list">
                     <h4>Color:</h4>
                     <div class="color-list-check">
-                      <input
-                        class="form-check-input bg-red"
-                        type="radio"
-                        name="flexRadioColorList"
-                        id="colorLista1"
-                      />
-                      <label class="form-check-label" for="colorLista1"
-                        >Red</label
-                      >
+                      <input class="form-check-input bg-red" type="radio" name="flexRadioColorList" id="colorLista1" />
+                      <label class="form-check-label" for="colorLista1">Red</label>
                     </div>
                     <div class="color-list-check">
-                      <input
-                        class="form-check-input bg-green"
-                        type="radio"
-                        name="flexRadioColorList"
-                        id="colorLista2"
-                        checked
-                      />
-                      <label class="form-check-label" for="colorLista2"
-                        >Green</label
-                      >
+                      <input class="form-check-input bg-green" type="radio" name="flexRadioColorList" id="colorLista2"
+                        checked />
+                      <label class="form-check-label" for="colorLista2">Green</label>
                     </div>
                     <div class="color-list-check me-0">
-                      <input
-                        class="form-check-input bg-blue"
-                        type="radio"
-                        name="flexRadioColorList"
-                        id="colorLista3"
-                      />
-                      <label class="form-check-label" for="colorLista3"
-                        >Blue</label
-                      >
+                      <input class="form-check-input bg-blue" type="radio" name="flexRadioColorList" id="colorLista3" />
+                      <label class="form-check-label" for="colorLista3">Blue</label>
                     </div>
                   </div>
                   <div class="product-details-pro-qty">
@@ -255,20 +126,12 @@
                     $550.00 <span class="price-old">$650.00</span>
                   </div>
                   <div class="product-details-action">
-                    <button
-                      type="button"
-                      class="product-action-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#action-CartAddModal"
-                    >
+                    <button type="button" class="product-action-btn" data-bs-toggle="modal"
+                      data-bs-target="#action-CartAddModal">
                       Add to cart
                     </button>
-                    <button
-                      type="button"
-                      class="product-action-wishlist"
-                      data-bs-toggle="modal"
-                      data-bs-target="#action-WishlistModal"
-                    >
+                    <button type="button" class="product-action-wishlist" data-bs-toggle="modal"
+                      data-bs-target="#action-WishlistModal">
                       <i class="fa fa-heart"></i>
                     </button>
                   </div>
@@ -283,12 +146,7 @@
   <!--== End Product Quick View Modal ==-->
 
   <!--== Start Product Quick Wishlist Modal ==-->
-  <aside
-    class="product-action-modal modal fade"
-    id="action-WishlistModal"
-    tabindex="-1"
-    aria-hidden="true"
-  >
+  <aside class="product-action-modal modal fade" id="action-WishlistModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -302,12 +160,7 @@
             </div>
             <div class="modal-action-product">
               <div class="thumb">
-                <img
-                  src="assets/images/shop/modal1.jpg"
-                  alt="Organic Food Juice"
-                  width="466"
-                  height="320"
-                />
+                <img src="assets/images/shop/modal1.jpg" alt="Organic Food Juice" width="466" height="320" />
               </div>
               <h4 class="product-name">
                 <a href="single-product.html">CRAS NEQUE METUS</a>
@@ -321,12 +174,7 @@
   <!--== End Product Quick Wishlist Modal ==-->
 
   <!--== Start Product Quick Add Cart Modal ==-->
-  <aside
-    class="product-action-modal modal fade"
-    id="action-CartAddModal"
-    tabindex="-1"
-    aria-hidden="true"
-  >
+  <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -339,12 +187,7 @@
             </div>
             <div class="modal-action-product">
               <div class="thumb">
-                <img
-                  src="assets/images/shop/modal1.jpg"
-                  alt="Organic Food Juice"
-                  width="466"
-                  height="320"
-                />
+                <img src="assets/images/shop/modal1.jpg" alt="Organic Food Juice" width="466" height="320" />
               </div>
               <h4 class="product-name">
                 <a href="single-product.html">CRAS NEQUE METUS</a>
@@ -358,12 +201,7 @@
   <!--== End Product Quick Add Cart Modal ==-->
 
   <!--== Start Product Quick Add Cart Modal ==-->
-  <aside
-    class="product-action-modal modal fade"
-    id="action-CompareModal"
-    tabindex="-1"
-    aria-hidden="true"
-  >
+  <aside class="product-action-modal modal fade" id="action-CompareModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -377,12 +215,7 @@
             </div>
             <div class="modal-action-product">
               <div class="thumb">
-                <img
-                  src="assets/images/shop/modal1.jpg"
-                  alt="Organic Food Juice"
-                  width="466"
-                  height="320"
-                />
+                <img src="assets/images/shop/modal1.jpg" alt="Organic Food Juice" width="466" height="320" />
               </div>
               <h4 class="product-name">
                 <a href="single-product.html">CRAS NEQUE METUS</a>
@@ -396,19 +229,10 @@
   <!--== End Product Quick Add Cart Modal ==-->
 
   <!--== Start Sidebar Cart Menu ==-->
-  <aside
-    class="sidebar-cart-modal offcanvas offcanvas-end"
-    data-bs-scroll="true"
-    tabindex="-1"
-    id="offcanvasWithCartSidebar"
-  >
+  <aside class="sidebar-cart-modal offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+    id="offcanvasWithCartSidebar">
     <div class="offcanvas-header">
-      <button
-        type="button"
-        class="btn-close cart-close"
-        data-bs-dismiss="offcanvas"
-        aria-label="Close"
-      >
+      <button type="button" class="btn-close cart-close" data-bs-dismiss="offcanvas" aria-label="Close">
         ×
       </button>
     </div>
@@ -425,19 +249,12 @@
             <ul>
               <li class="single-product-cart">
                 <div class="cart-img">
-                  <a href="shop-single-product.html"
-                    ><img
-                      src="assets/images/shop/s1.jpg"
-                      alt="Image"
-                      width="70"
-                      height="67"
-                  /></a>
+                  <a href="shop-single-product.html"><img src="assets/images/shop/s1.jpg" alt="Image" width="70"
+                      height="67" /></a>
                 </div>
                 <div class="cart-title">
                   <h4>
-                    <a href="shop-single-product.html"
-                      >Strapless Crop Top Gown</a
-                    >
+                    <a href="shop-single-product.html">Strapless Crop Top Gown</a>
                   </h4>
                   <span> 1 × <span class="price"> $12.00 </span></span>
                 </div>
@@ -447,19 +264,12 @@
               </li>
               <li class="single-product-cart">
                 <div class="cart-img">
-                  <a href="shop-single-product.html"
-                    ><img
-                      src="assets/images/shop/s2.jpg"
-                      alt="Image"
-                      width="70"
-                      height="67"
-                  /></a>
+                  <a href="shop-single-product.html"><img src="assets/images/shop/s2.jpg" alt="Image" width="70"
+                      height="67" /></a>
                 </div>
                 <div class="cart-title">
                   <h4>
-                    <a href="shop-single-product.html"
-                      >Short Lilac Ruffled Dress</a
-                    >
+                    <a href="shop-single-product.html">Short Lilac Ruffled Dress</a>
                   </h4>
                   <span> 1 × <span class="price"> $59.90 </span></span>
                 </div>
@@ -483,20 +293,11 @@
   <!--== End Sidebar Cart Menu ==-->
 
   <!--== Start Aside Search Menu ==-->
-  <aside
-    class="aside-search-box-wrapper offcanvas offcanvas-top"
-    data-bs-scroll="true"
-    tabindex="-1"
-    id="AsideOffcanvasSearch"
-  >
+  <aside class="aside-search-box-wrapper offcanvas offcanvas-top" data-bs-scroll="true" tabindex="-1"
+    id="AsideOffcanvasSearch">
     <div class="offcanvas-header">
       <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="offcanvas"
-        aria-label="Close"
-      >
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
         ×
       </button>
     </div>
@@ -509,12 +310,7 @@
           <form action="#" method="post">
             <div class="search-form position-relative">
               <label for="search-input" class="visually-hidden">Search</label>
-              <input
-                id="search-input"
-                type="search"
-                class="form-control"
-                placeholder="Search entire store…"
-              />
+              <input id="search-input" type="search" class="form-control" placeholder="Search entire store…" />
               <button class="search-button" type="button">
                 <i class="fa fa-search"></i>
               </button>
@@ -527,12 +323,8 @@
   <!--== End Aside Search Menu ==-->
 
   <!--== Start Side Menu ==-->
-  <aside
-    class="aside-side-menu-wrapper off-canvas-area offcanvas offcanvas-end"
-    data-bs-scroll="true"
-    tabindex="-1"
-    id="offcanvasWithBothOptions"
-  >
+  <aside class="aside-side-menu-wrapper off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+    id="offcanvasWithBothOptions">
     <div class="offcanvas-header" data-bs-dismiss="offcanvas">
       <h5>Menu</h5>
       <button type="button" class="btn-close">×</button>
@@ -569,24 +361,16 @@
                   <a href="javascript:void(0)">Single Product</a>
                   <ul>
                     <li>
-                      <a href="shop-single-product.html"
-                        >Single Product Normal</a
-                      >
+                      <a href="shop-single-product.html">Single Product Normal</a>
                     </li>
                     <li>
-                      <a href="shop-single-product-variable.html"
-                        >Single Product Variable</a
-                      >
+                      <a href="shop-single-product-variable.html">Single Product Variable</a>
                     </li>
                     <li>
-                      <a href="shop-single-product-group.html"
-                        >Single Product Group</a
-                      >
+                      <a href="shop-single-product-group.html">Single Product Group</a>
                     </li>
                     <li>
-                      <a href="shop-single-product-affiliate.html"
-                        >Single Product Affiliate</a
-                      >
+                      <a href="shop-single-product-affiliate.html">Single Product Affiliate</a>
                     </li>
                   </ul>
                 </li>
@@ -621,14 +405,10 @@
                 </li>
                 <li><a href="blog-details.html">Blog Details</a></li>
                 <li>
-                  <a href="blog-details-left-sidebar.html"
-                    >Blog Details Left Sidebar</a
-                  >
+                  <a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a>
                 </li>
                 <li>
-                  <a href="blog-details-right-sidebar.html"
-                    >Blog Details Right Sidebar</a
-                  >
+                  <a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a>
                 </li>
               </ul>
             </li>

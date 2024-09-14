@@ -22,6 +22,8 @@ import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.c
 import { ProfileComponent } from './private/profile/profile.component';
 import { HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './components/public/login/login.component';
+import { RegisterComponent } from './components/public/register/register.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ContactComponent,
     MapComponent,
     ShopAllPacksComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

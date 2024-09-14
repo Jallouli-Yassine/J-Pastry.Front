@@ -1,0 +1,57 @@
+<div class="login-register-content login-register-pl">
+    <div class="login-register-title mb-30">
+        <h2>Register</h2>
+        <p>
+            Create a new account to embrace the world of abaya fashion. Enjoy a personalized shopping experience
+            with us.
+        </p>
+    </div>
+    <div class="login-register-style">
+        <form [formGroup]="addUserForm" (ngSubmit)="save()">
+            <div class="login-register-input">
+                <input formControlName="name" type="text" name="user-name" placeholder="first name" />
+            </div>
+
+            <div *ngIf="nomUser?.touched && nomUser?.invalid">
+                <small *ngIf="nomUser?.errors!['required']" class="text-danger">firstname is required <br></small>
+                <small *ngIf="nomUser?.errors!['pattern']" class="text-danger">invalid firstname <br></small>
+                <small *ngIf="nomUser?.errors!['minlength']" class="text-danger">firstname must contain at least 3
+                    characters</small>
+            </div>
+
+            <!--
+           <div class="login-register-input">
+          <input type="number" name="user-name" placeholder="phone" />
+        </div> 
+-->
+
+            <div class="login-register-input">
+                <input formControlName="email" type="text" name="user-name" placeholder="E-mail address" />
+            </div>
+            <div *ngIf="emailUser?.touched && emailUser?.invalid">
+                <small *ngIf="emailUser?.errors!['required']" class="text-danger">email is required <br></small>
+            </div>
+
+            <div class="login-register-input">
+                <input formControlName="password" type="password" name="user-password" placeholder="Password" />
+            </div>
+
+            <div *ngIf="passwordUser?.touched && passwordUser?.invalid">
+                <small *ngIf="passwordUser?.errors!['required']" class="text-danger">password is required</small>
+            </div>
+
+            <div class="login-register-input">
+                <input formControlName="passwordConfirm" type="passwordConfirm" name="user-password"
+                    placeholder="passwordConfirm" />
+            </div>
+
+            <div *ngIf="confPassUser?.touched && confPassUser?.invalid">
+                <small *ngIf="confPassUser?.errors!['required']" class="text-danger">passwordConfirm is required</small>
+            </div>
+
+            <div class="btn-register">
+                <input [disabled]="addUserForm.invalid" type="submit" value="sign up" class="btn-register-now">
+            </div>
+        </form>
+    </div>
+</div>

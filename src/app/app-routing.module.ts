@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './public/page-not-found/page-not-found.co
 import { ContactComponent } from './private/contact/contact.component';
 import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.component';
 import { ProfileComponent } from './private/profile/profile.component';
+import { authGuard, authReverseGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -21,10 +22,13 @@ const routes: Routes = [
   {
     path: 'shop',
     component: ShopComponent,
+    canActivate: [authGuard],  // Protect this route with the authGuard
   },
   {
     path: 'login-register',
     component: LoginRegisterComponent,
+    canActivate: [authReverseGuard], // Prevent access if logged in
+
   },
   {
     path: 'contact-us',
@@ -33,16 +37,19 @@ const routes: Routes = [
   {
     path: 'packs',
     component: ShopAllPacksComponent,
+    canActivate: [authGuard],  // Protect this route with the authGuard
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [authGuard],  // Protect this route with the authGuard
   },
   {
     path: '**',
     component: PageNotFoundComponent,
   },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
