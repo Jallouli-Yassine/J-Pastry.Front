@@ -8,6 +8,7 @@ import { ContactComponent } from './private/contact/contact.component';
 import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.component';
 import { ProfileComponent } from './private/profile/profile.component';
 import { authGuard, authReverseGuard } from './auth.guard';
+import { AddProductComponent } from './components/private/product/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,11 @@ const routes: Routes = [
     canActivate: [authGuard],  // Protect this route with the authGuard
   },
   {
+    path: 'addProduct',
+    component: AddProductComponent,
+    //canActivate: [authGuard],  // Protect this route with the authGuard
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
@@ -55,4 +61,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

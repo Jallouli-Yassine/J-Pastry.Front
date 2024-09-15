@@ -1,0 +1,679 @@
+<!--== Wrapper Start ==-->
+<div class="wrapper">
+    <app-navbar></app-navbar>
+  
+    <main class="main-content">
+      <!--== Start Page Header Area Wrapper ==-->
+      <section class="page-header-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="page-header-content">
+                <h1 class="page-header-title">Contact Us</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Page Header Area Wrapper ==-->
+  
+      <section class="contact-area section-space mt-n3 mt-md-0 pt-0 pt-md-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-7 col-lg-6">
+              <div class="contact-form-area">
+                <h3>Add Product</h3>
+                <p>
+                  Fill in the details below to add a new product to your store.
+                </p>
+      
+                <!--== Start Add Product Form ==-->
+                <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="contact-form">
+                  
+                  <!-- Name Field -->
+                  <div class="form-input-item">
+                    <input class="myinput form-control" type="text" formControlName="name" placeholder="Product Name" />
+                    <div *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid">
+                      <small *ngIf="productForm.get('name')?.errors?.['required']" class="text-danger">Product name is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Description Field -->
+                  <div class="form-input-item">
+                    <textarea class="form-control" formControlName="description" placeholder="Product Description"></textarea>
+                    <div *ngIf="productForm.get('description')?.touched && productForm.get('description')?.invalid">
+                      <small *ngIf="productForm.get('description')?.errors?.['required']" class="text-danger">Description is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Price Per Unit Field -->
+                  <div class="form-input-item">
+                    <input class="form-control" type="number" formControlName="pricePerUnit" placeholder="Price per Unit" />
+                    <div *ngIf="productForm.get('pricePerUnit')?.touched && productForm.get('pricePerUnit')?.invalid">
+                      <small *ngIf="productForm.get('pricePerUnit')?.errors?.['required']" class="text-danger">Price per unit is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Unit Select Field -->
+                  <div class="form-input-item">
+                    <select class="form-control" formControlName="unit">
+                      <option value="" disabled>Select Unit</option>
+                      <option value="kg">Kg</option>
+                      <option value="piece">Piece</option>
+                      <option value="liter">Liter</option>
+                      <option value="pack">Pack</option>
+                    </select>
+                    <div *ngIf="productForm.get('unit')?.touched && productForm.get('unit')?.invalid">
+                      <small *ngIf="productForm.get('unit')?.errors?.['required']" class="text-danger">Unit is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Stock Field -->
+                  <div class="form-input-item">
+                    <input class="form-control" type="number" formControlName="stock" placeholder="Stock Quantity" />
+                    <div *ngIf="productForm.get('stock')?.touched && productForm.get('stock')?.invalid">
+                      <small *ngIf="productForm.get('stock')?.errors?.['required']" class="text-danger">Stock is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Image URL Field -->
+                  <div class="form-input-item">
+                    <input class="form-control" type="text" formControlName="imageUrl" placeholder="Image URL" />
+                    <div *ngIf="productForm.get('imageUrl')?.touched && productForm.get('imageUrl')?.invalid">
+                      <small *ngIf="productForm.get('imageUrl')?.errors?.['required']" class="text-danger">Image URL is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Category Select Field -->
+                  <div class="form-input-item">
+                    <select class="form-control" formControlName="category">
+                      <option value="" disabled>Select Category</option>
+                      <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+                    </select>
+                    <div *ngIf="productForm.get('category')?.touched && productForm.get('category')?.invalid">
+                      <small class="text-danger">Category is required</small>
+                    </div>
+                  </div>
+      
+                  <!-- Submit Button -->
+                  <div>
+                    <button class="btn btn-border-primary" type="submit" [disabled]="productForm.invalid">
+                      Add Product
+                    </button>
+                  </div>
+      
+                </form>
+                <!--== End Add Product Form ==-->
+      
+              </div>
+            </div>
+      
+            <!-- Image Section -->
+            <div class="col-sm-12 col-md-5 col-lg-6 align-self-center">
+              <div class="contact-thumb">
+                <img style="width: 160%" src="assets/images/photos/product.png" alt="Product Image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  
+  
+  
+      <!--== Start Contact Info Area Wrapper ==-->
+      <section class="contact-info-area pb-10">
+        <div class="container">
+          <div class="row mb-n6">
+            <div class="col-sm-6 col-md-4 mb-6">
+              <!--== Start Contact Info Item ==-->
+              <div class="contact-info-item">
+                <h4>Phone</h4>
+                <div  class="content">
+                  <a style="color: #733729;" href="tel://+11215562222 ">+11 21556 2222 </a>
+                  <a style="color: #733729;" href="tel://+12454555545">+12 4545 55545</a>
+                </div>
+              </div>
+              <!--== End Contact Info Item ==-->
+            </div>
+            <div class="col-sm-6 col-md-4 mb-6">
+              <!--== Start Contact Info Item ==-->
+              <div class="contact-info-item">
+                <h4>E-mail</h4>
+                <div class="content">
+                  <a style="color: #733729;" href="mailto://demo@example.com">demo@example.com</a>
+                  <a style="color: #733729;" href="mailto://example@demo.info">example@demo.info</a>
+                </div>
+              </div>
+              <!--== End Contact Info Item ==-->
+            </div>
+            <div class="col-sm-6 col-md-4 mb-6">
+              <!--== Start Contact Info Item ==-->
+              <div class="contact-info-item">
+                <h4>Address</h4>
+                <div class="content">
+                  <p style="color: #733729;">98 Winn St, Woburn, MA 01801, USA</p>
+                </div>
+              </div>
+              <!--== End Contact Info Item ==-->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Contact Info Area Wrapper ==-->
+    </main>
+  
+    <app-footer></app-footer>
+  
+    <app-scroll-to-top></app-scroll-to-top>
+  
+    <aside
+      class="product-cart-view-modal modal fade"
+      id="action-QuickViewModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="product-quick-view-content">
+              <button type="button" class="btn-close" data-bs-dismiss="modal">
+                <span>×</span>
+              </button>
+              <div class="row row-gutter-0">
+                <div class="col-lg-6">
+                  <div class="single-product-slider">
+                    <div class="single-product-thumb">
+                      <div class="swiper single-product-quick-view-slider">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="thumb-item">
+                              <img
+                                src="assets/images/shop/details/m1.jpg"
+                                alt="Image"
+                                width="640"
+                                height="710"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="thumb-item">
+                              <img
+                                src="assets/images/shop/details/m2.jpg"
+                                alt="Image"
+                                width="640"
+                                height="710"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="thumb-item">
+                              <img
+                                src="assets/images/shop/details/m3.jpg"
+                                alt="Image"
+                                width="640"
+                                height="710"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="product-details-content pt-3">
+                    <h3 class="product-details-title">Casual Women pants</h3>
+                    <div class="product-details-review">
+                      <div class="product-review-icon">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                      </div>
+                      <button type="button" class="product-review-show">
+                        156 reviews
+                      </button>
+                    </div>
+                    <p class="product-details-desc">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Delectus, repellendus.
+                    </p>
+                    <div class="product-details-color-list">
+                      <h4>Color:</h4>
+                      <div class="color-list-check">
+                        <input
+                          class="form-check-input bg-red"
+                          type="radio"
+                          name="flexRadioColorList"
+                          id="colorLista1"
+                        />
+                        <label class="form-check-label" for="colorLista1"
+                          >Red</label
+                        >
+                      </div>
+                      <div class="color-list-check">
+                        <input
+                          class="form-check-input bg-green"
+                          type="radio"
+                          name="flexRadioColorList"
+                          id="colorLista2"
+                          checked
+                        />
+                        <label class="form-check-label" for="colorLista2"
+                          >Green</label
+                        >
+                      </div>
+                      <div class="color-list-check me-0">
+                        <input
+                          class="form-check-input bg-blue"
+                          type="radio"
+                          name="flexRadioColorList"
+                          id="colorLista3"
+                        />
+                        <label class="form-check-label" for="colorLista3"
+                          >Blue</label
+                        >
+                      </div>
+                    </div>
+                    <div class="product-details-pro-qty">
+                      <h4>QTY :</h4>
+                      <div class="pro-qty">
+                        <input type="text" title="Quantity" value="01" />
+                      </div>
+                    </div>
+                    <div class="product-details-price">
+                      $550.00 <span class="price-old">$650.00</span>
+                    </div>
+                    <div class="product-details-action">
+                      <button
+                        type="button"
+                        class="product-action-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#action-CartAddModal"
+                      >
+                        Add to cart
+                      </button>
+                      <button
+                        type="button"
+                        class="product-action-wishlist"
+                        data-bs-toggle="modal"
+                        data-bs-target="#action-WishlistModal"
+                      >
+                        <i class="fa fa-heart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Product Quick View Modal ==-->
+  
+    <!--== Start Product Quick Wishlist Modal ==-->
+    <aside
+      class="product-action-modal modal fade"
+      id="action-WishlistModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="product-action-view-content">
+              <button type="button" class="btn-close" data-bs-dismiss="modal">
+                <i class="fa fa-times"></i>
+              </button>
+              <div class="modal-action-messages">
+                <i class="fa fa-check-square-o"></i> Added to wishlist
+                successfully!
+              </div>
+              <div class="modal-action-product">
+                <div class="thumb">
+                  <img
+                    src="assets/images/shop/modal1.jpg"
+                    alt="Organic Food Juice"
+                    width="466"
+                    height="320"
+                  />
+                </div>
+                <h4 class="product-name">
+                  <a href="single-product.html">CRAS NEQUE METUS</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Product Quick Wishlist Modal ==-->
+  
+    <!--== Start Product Quick Add Cart Modal ==-->
+    <aside
+      class="product-action-modal modal fade"
+      id="action-CartAddModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="product-action-view-content">
+              <button type="button" class="btn-close" data-bs-dismiss="modal">
+                <i class="fa fa-times"></i>
+              </button>
+              <div class="modal-action-messages">
+                <i class="fa fa-check-square-o"></i> Added to cart successfully!
+              </div>
+              <div class="modal-action-product">
+                <div class="thumb">
+                  <img
+                    src="assets/images/shop/modal1.jpg"
+                    alt="Organic Food Juice"
+                    width="466"
+                    height="320"
+                  />
+                </div>
+                <h4 class="product-name">
+                  <a href="single-product.html">CRAS NEQUE METUS</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Product Quick Add Cart Modal ==-->
+  
+    <!--== Start Product Quick Add Cart Modal ==-->
+    <aside
+      class="product-action-modal modal fade"
+      id="action-CompareModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="product-action-view-content">
+              <button type="button" class="btn-close" data-bs-dismiss="modal">
+                <i class="fa fa-times"></i>
+              </button>
+              <div class="modal-action-messages">
+                <i class="fa fa-check-square-o"></i> Added to compare
+                successfully!
+              </div>
+              <div class="modal-action-product">
+                <div class="thumb">
+                  <img
+                    src="assets/images/shop/modal1.jpg"
+                    alt="Organic Food Juice"
+                    width="466"
+                    height="320"
+                  />
+                </div>
+                <h4 class="product-name">
+                  <a href="single-product.html">CRAS NEQUE METUS</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Product Quick Add Cart Modal ==-->
+  
+    <!--== Start Sidebar Cart Menu ==-->
+    <aside
+      class="sidebar-cart-modal offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasWithCartSidebar"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close cart-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+      <div class="sidebar-cart-inner offcanvas-body">
+        <div class="sidebar-cart-content">
+          <div class="sidebar-cart-all">
+            <div class="cart-header">
+              <h3>Shopping Cart</h3>
+              <div class="close-style-wrap">
+                <span class="close-style close-style-width-1 cart-close"></span>
+              </div>
+            </div>
+            <div class="cart-content cart-content-padding">
+              <ul>
+                <li class="single-product-cart">
+                  <div class="cart-img">
+                    <a href="shop-single-product.html"
+                      ><img
+                        src="assets/images/shop/s1.jpg"
+                        alt="Image"
+                        width="70"
+                        height="67"
+                    /></a>
+                  </div>
+                  <div class="cart-title">
+                    <h4>
+                      <a href="shop-single-product.html"
+                        >Strapless Crop Top Gown</a
+                      >
+                    </h4>
+                    <span> 1 × <span class="price"> $12.00 </span></span>
+                  </div>
+                  <div class="cart-delete">
+                    <a href="#/"><i class="pe-7s-trash icons"></i></a>
+                  </div>
+                </li>
+                <li class="single-product-cart">
+                  <div class="cart-img">
+                    <a href="shop-single-product.html"
+                      ><img
+                        src="assets/images/shop/s2.jpg"
+                        alt="Image"
+                        width="70"
+                        height="67"
+                    /></a>
+                  </div>
+                  <div class="cart-title">
+                    <h4>
+                      <a href="shop-single-product.html"
+                        >Short Lilac Ruffled Dress</a
+                      >
+                    </h4>
+                    <span> 1 × <span class="price"> $59.90 </span></span>
+                  </div>
+                  <div class="cart-delete">
+                    <a href="#/"><i class="pe-7s-trash icons"></i></a>
+                  </div>
+                </li>
+              </ul>
+              <div class="cart-total">
+                <h4>Subtotal: <span>$71.90</span></h4>
+              </div>
+              <div class="cart-checkout-btn">
+                <a class="cart-btn" href="shop-cart.html">view cart</a>
+                <a class="checkout-btn" href="shop-checkout.html">checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Sidebar Cart Menu ==-->
+  
+    <!--== Start Aside Search Menu ==-->
+    <aside
+      class="aside-search-box-wrapper offcanvas offcanvas-top"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="AsideOffcanvasSearch"
+    >
+      <div class="offcanvas-header">
+        <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container pt--0 pb--0">
+          <div class="search-box-form-wrap">
+            <div class="search-note">
+              <p>Start typing and press Enter to search</p>
+            </div>
+            <form action="#" method="post">
+              <div class="search-form position-relative">
+                <label for="search-input" class="visually-hidden">Search</label>
+                <input
+                  id="search-input"
+                  type="search"
+                  class="form-control"
+                  placeholder="Search entire store…"
+                />
+                <button class="search-button" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--== End Aside Search Menu ==-->
+  
+    <!--== Start Side Menu ==-->
+    <aside
+      class="aside-side-menu-wrapper off-canvas-area offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasWithBothOptions"
+    >
+      <div class="offcanvas-header" data-bs-dismiss="offcanvas">
+        <h5>Menu</h5>
+        <button type="button" class="btn-close">×</button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Start Mobile Menu Wrapper -->
+        <div class="res-mobile-menu">
+          <nav id="offcanvasNav" class="offcanvas-menu">
+            <ul>
+              <li>
+                <a href="javascript:void(0)">Home</a>
+                <ul>
+                  <li><a href="index.html">Home One</a></li>
+                  <li><a href="index-two.html">Home Two</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Shop</a>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">Shop Layout</a>
+                    <ul>
+                      <li><a href="shop.html">Shop 3 Column</a></li>
+                      <li><a href="shop-four-columns.html">Shop 4 Column</a></li>
+                      <li>
+                        <a href="shop-left-sidebar.html">Shop Left Sidebar</a>
+                      </li>
+                      <li>
+                        <a href="shop-right-sidebar.html">Shop Right Sidebar</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">Single Product</a>
+                    <ul>
+                      <li>
+                        <a href="shop-single-product.html"
+                          >Single Product Normal</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop-single-product-variable.html"
+                          >Single Product Variable</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop-single-product-group.html"
+                          >Single Product Group</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop-single-product-affiliate.html"
+                          >Single Product Affiliate</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">Others Pages</a>
+                    <ul>
+                      <li><a href="shop-cart.html">Shopping Cart</a></li>
+                      <li><a href="shop-checkout.html">Checkout</a></li>
+                      <li><a href="shop-wishlist.html">Wishlist</a></li>
+                      <li><a href="shop-compare.html">Compare</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Pages</a>
+                <ul>
+                  <li><a href="about-us.html">About</a></li>
+                  <li><a href="account.html">Account</a></li>
+                  <li><a href="login-register.html">Login/Register</a></li>
+                  <li><a href="page-not-found.html">Page Not Found</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Blog</a>
+                <ul>
+                  <li><a href="blog.html">Blog Grid</a></li>
+                  <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                  <li>
+                    <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
+                  </li>
+                  <li><a href="blog-details.html">Blog Details</a></li>
+                  <li>
+                    <a href="blog-details-left-sidebar.html"
+                      >Blog Details Left Sidebar</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog-details-right-sidebar.html"
+                      >Blog Details Right Sidebar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu Wrapper -->
+      </div>
+    </aside>
+    <!--== Start Side Menu ==-->
+  </div>
+  
