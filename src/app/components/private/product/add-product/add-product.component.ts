@@ -12,6 +12,8 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class AddProductComponent {
   productForm!: FormGroup;
   categories: any[] = [];  // Array to store categories
+  selectedFile: File | null = null;  // Store the selected file
+  fileError: string | null = null;   // To show file errors, if any
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +27,6 @@ export class AddProductComponent {
       pricePerUnit: new FormControl('', Validators.required),
       unit: new FormControl('', Validators.required),
       stock: new FormControl('', Validators.required),
-      imageUrl: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)  // Category form control
     });
   }
@@ -49,6 +50,8 @@ export class AddProductComponent {
     });
   }
 
+
+
   // Submit the form and add the product
   addProduct(): void {
     if (this.productForm.valid) {
@@ -61,6 +64,22 @@ export class AddProductComponent {
           console.error('Error adding product:', error);
         }
       });
+    }
+  }
+
+
+  onFileSelected(event: Event): void {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      this.selectedFile = fileInput.files[0];
+
+      // Check if the file is an image and has a valid size (optional)
+      if (!this.selectedFile.type.startsWith('image/') || this.selectedFile.size > 5 * 1024 * 1024) {
+        this.fileError = 'Please select an image smaller than 5MB.';
+        this.selectedFile = null;
+      } else {
+        this.fileError = null;
+      }
     }
   }
 }

@@ -10,13 +10,21 @@ export class ProductService {
   private baseUrl = 'http://localhost:3000/api/product';
 
   constructor(private http: HttpClient) {}
+  /*
+    addProduct(productData: any, categoryId: string): Observable<any> {
+      return this.http.post(`${this.baseUrl}/${categoryId}`, productData);
+    }
+   */
 
-  addProduct(productData: any, categoryId: string): Observable<any> {
+  // Update method to handle FormData for product creation
+  addProduct(productData: FormData, categoryId: string): Observable<any> {
     return this.http.post(`${this.baseUrl}/${categoryId}`, productData);
   }
+    // Method to fetch all products
+    getProducts(): Observable<Product[]> {
+      return this.http.get<Product[]>(this.baseUrl);
+    }
 
-  // Method to fetch all products
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl);
-  }
+
+
 }

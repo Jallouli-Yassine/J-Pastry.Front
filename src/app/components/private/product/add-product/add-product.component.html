@@ -54,11 +54,11 @@
                     </div>
                   </div>
 
-                  <!-- Image URL Field -->
+                  <!-- Image Upload Field -->
                   <div class="form-input-item col-md-6">
-                    <input class="form-control" type="text" formControlName="imageUrl" placeholder="Image URL" />
-                    <div *ngIf="productForm.get('imageUrl')?.touched && productForm.get('imageUrl')?.invalid">
-                      <small *ngIf="productForm.get('imageUrl')?.errors?.['required']" class="text-danger">Image URL is required</small>
+                    <input class="form-control" type="file" (change)="onFileSelected($event)" />
+                    <div *ngIf="fileError" class="text-danger">
+                      <small>{{ fileError }}</small>
                     </div>
                   </div>
 
