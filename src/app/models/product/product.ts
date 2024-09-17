@@ -7,5 +7,7 @@ export class Product {
     category!: string; // Category ID
     quantity?: number;
     imageUrl!: string;
+    createdAt!: string;
+
 
 }

@@ -1,0 +1,32 @@
+<div>
+  <button [routerLink]="['addProduct']" class="btn btn-primary">Ajouter produit</button>
+  <div class="myaccount-content">
+    <h3>Products</h3>
+    <div class="myaccount-table table-responsive text-center">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+        <tr>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price Per Unit</th>
+          <th>Unit</th>
+          <th>Category ID</th>
+          <th>Image URL</th>
+          <th>Created At</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.pricePerUnit }}</td>
+          <td>{{ product.unit }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.imageUrl }}</td>
+          <td>{{ product.createdAt | date: 'medium' }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

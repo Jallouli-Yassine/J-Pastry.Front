@@ -3,28 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SliderComponent } from './public/slider/slider.component';
-import { HomeComponent } from './public/home/home.component';
-import { ProductBunnerComponent } from './public/product-bunner/product-bunner.component';
-import { FooterComponent } from './public/footer/footer.component';
-import { NavbarComponent } from './public/navbar/navbar.component';
-import { NewestProductsComponent } from './public/newest-products/newest-products.component';
-import { NewestCollectionsComponent } from './public/newest-collections/newest-collections.component';
-import { MobileNavbarComponent } from './public/mobile-navbar/mobile-navbar.component';
-import { ShopComponent } from './private/shop/shop.component';
-import { LoginRegisterComponent } from './public/login-register/login-register.component';
-import { ScrollToTopComponent } from './public/scroll-to-top/scroll-to-top.component';
-import { PageNotFoundComponent } from './public/page-not-found/page-not-found.component';
-import { TopBarShpopComponent } from './public/top-bar-shpop/top-bar-shpop.component';
-import { ContactComponent } from './private/contact/contact.component';
-import { MapComponent } from './private/map/map.component';
-import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.component';
-import { ProfileComponent } from './private/profile/profile.component';
+import { SliderComponent } from './components/public/slider/slider.component';
+import { HomeComponent } from './components/public/home/home.component';
+import { ProductBunnerComponent } from './components/public/product-bunner/product-bunner.component';
+import { FooterComponent } from './components/public/footer/footer.component';
+import { NavbarComponent } from './components/public/navbar/navbar.component';
+import { NewestProductsComponent } from './components/public/newest-products/newest-products.component';
+import { NewestCollectionsComponent } from './components/public/newest-collections/newest-collections.component';
+import { MobileNavbarComponent } from './components/public/mobile-navbar/mobile-navbar.component';
+import { ShopComponent } from './components/private/shop/shop.component';
+import { LoginRegisterComponent } from './components/public/login-register/login-register.component';
+import { ScrollToTopComponent } from './components/public/scroll-to-top/scroll-to-top.component';
+import { PageNotFoundComponent } from './components/public/page-not-found/page-not-found.component';
+import { TopBarShpopComponent } from './components/public/top-bar-shpop/top-bar-shpop.component';
+import { ContactComponent } from './components/private/contact/contact.component';
+import { MapComponent } from './components/private/map/map.component';
+import { ShopAllPacksComponent } from './components/private/shop-all-packs/shop-all-packs.component';
+import { ProfileComponent } from './components/private/profile/profile.component';
 import { HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { AddProductComponent } from './components/private/product/add-product/add-product.component';
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { AllProductsComponent } from './components/private/product/all-products/all-products.component';
+import { TableProductComponent } from './components/private/product/table-product/table-product.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { AddProductComponent } from './components/private/product/add-product/ad
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
-    AddProductComponent
+    AddProductComponent,
+    DashboardComponent,
+    AllProductsComponent,
+    TableProductComponent
   ],
   imports: [
     BrowserModule,

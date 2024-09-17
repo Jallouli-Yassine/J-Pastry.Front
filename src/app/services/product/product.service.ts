@@ -14,4 +14,9 @@ export class ProductService {
   addProduct(productData: any, categoryId: string): Observable<any> {
     return this.http.post(`${this.baseUrl}/${categoryId}`, productData);
   }
+
+  // Method to fetch all products
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl);
+  }
 }

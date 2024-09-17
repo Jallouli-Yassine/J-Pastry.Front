@@ -18,7 +18,7 @@
         <div class="header-navigation">
           <ul class="main-nav">
             <li class="has-submenu">
-              <a href="blog.html">Account</a>
+              <a href="blog.html"> {{user.role}} Account</a>
               <ul class="submenu-nav">
                 <li><a routerLink="/login-register">Login/Register</a></li>
                 <li>
@@ -27,8 +27,15 @@
                 <li>
                   <a (click)="onLogout()">Log Out</a>
                 </li>
+              
+                  <li *ngIf="user.role === 'user'">
+                    <a routerLink="/dashboard">Dashboard</a>
+                  </li>
+           
+
               </ul>
             </li>
+            
             <li class="has-submenu">
               <a routerLink="/shop">Shop</a>
               <ul class="submenu-nav">

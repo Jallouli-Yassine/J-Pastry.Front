@@ -11,11 +11,11 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="page-header-content">
-        
+
                                         <h1 class="page-header-title">Our Products</h1>
                                     </div>
                                 </div>
-        
+
                             </div>
                         </div>
                     </section>
@@ -33,7 +33,7 @@
                             </a>
                             <!--== End Product Categories Item ==-->
                         </div>
-                      
+
                         <div  class="col-6 col-md-4 col-lg-2 mb-8">
                             <!--== Start Product Categories Item ==-->
                             <a class="product-two-category-item" href="shop.html">
@@ -51,9 +51,9 @@
             <!--== Start Product Area Wrapper ==-->
             <section class="product-area section-space">
                 <div class="container">
-                    <div class="row mb-n6 product-items-two">
-                        
-                        <div class="col-sm-6 col-lg-4 col-xl-3 mb-6">
+                    <div  class="row mb-n6 product-items-two">
+
+                        <div *ngFor="let p of products" class="col-sm-6 col-lg-4 col-xl-3 mb-6">
                             <!--== Start Product Item ==-->
                             <div class="product-item">
                                 <a class="product-thumb" href="shop-single-product.html">
@@ -61,9 +61,15 @@
                                 </a>
                                 <span class="badges">New</span>
                                 <div class="product-action">
-                                    <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                        <i class="fa fa-expand"></i>
-                                    </button>
+                                  <!-- Quick View Button -->
+                                  <button
+                                    type="button"
+                                    class="product-action-btn action-btn-quick-view"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#action-QuickViewModal"
+                                    (click)="selectProduct(p)">
+                                    <i class="fa fa-expand"></i>
+                                  </button>
                                     <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
                                         <i class="fa fa-shopping-cart"></i>
                                     </button>
@@ -72,8 +78,8 @@
                                     </button>
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="title"><a href="shop-single-product.html">static name</a></h4>
-                                    <div class="price">$650.00 <span class="price-old">$650.00</span></div>
+                                    <h4 class="title"><a href="shop-single-product.html">{{p.name}}</a></h4>
+                                    <div class="price">{{p.pricePerUnit}}DT/{{p.unit}} <span class="price-old">TND500</span></div>
                                     <button type="button" class="info-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                         <i class="fa fa-heart-o"></i>
                                     </button>
@@ -81,90 +87,7 @@
                             </div>
                             <!--== End prPduct Item ==-->
                         </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3 mb-6">
-                            <!--== Start Product Item ==-->
-                            <div class="product-item">
-                                <a class="product-thumb" href="shop-single-product.html">
-                                    <img src="assets/images/shop/p1.jpg" style="height: 190px;" alt="Image-HasTech">
-                                </a>
-                                <span class="badges">New</span>
-                                <div class="product-action">
-                                    <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                        <i class="fa fa-expand"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-compare" data-bs-toggle="modal" data-bs-target="#action-CompareModal">
-                                        <i class="fa fa-exchange"></i>
-                                    </button>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="shop-single-product.html">static name</a></h4>
-                                    <div class="price">$650.00 <span class="price-old">$650.00</span></div>
-                                    <button type="button" class="info-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                        <i class="fa fa-heart-o"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!--== End prPduct Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3 mb-6">
-                            <!--== Start Product Item ==-->
-                            <div class="product-item">
-                                <a class="product-thumb" href="shop-single-product.html">
-                                    <img src="assets/images/shop/p2.jpg"style="height: 190px;" alt="Image-HasTech">
-                                </a>
-                                <span class="badges">New</span>
-                                <div class="product-action">
-                                    <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                        <i class="fa fa-expand"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-compare" data-bs-toggle="modal" data-bs-target="#action-CompareModal">
-                                        <i class="fa fa-exchange"></i>
-                                    </button>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="shop-single-product.html">static name</a></h4>
-                                    <div class="price">$650.00 <span class="price-old">$650.00</span></div>
-                                    <button type="button" class="info-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                        <i class="fa fa-heart-o"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!--== End prPduct Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3 mb-6">
-                            <!--== Start Product Item ==-->
-                            <div class="product-item">
-                                <a class="product-thumb" href="shop-single-product.html">
-                                    <img src="assets/images/shop/p3.jpg" style="height: 190px;" alt="Image-HasTech">
-                                </a>
-                                <span class="badges">New</span>
-                                <div class="product-action">
-                                    <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                        <i class="fa fa-expand"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-compare" data-bs-toggle="modal" data-bs-target="#action-CompareModal">
-                                        <i class="fa fa-exchange"></i>
-                                    </button>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="shop-single-product.html">static name</a></h4>
-                                    <div class="price">$650.00 <span class="price-old">$650.00</span></div>
-                                    <button type="button" class="info-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                        <i class="fa fa-heart-o"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!--== End prPduct Item ==-->
-                        </div>
+
 
                     </div>
                     <div class="col-12 mb-6">
@@ -188,7 +111,7 @@
                         </nav>
                     </div>
                 </div>
-                
+
             </section>
             <!--== End Product Area Wrapper ==-->
 
@@ -198,92 +121,43 @@
 <app-footer></app-footer>
  <!--== Scroll Top Button ==-->
  <app-scroll-to-top></app-scroll-to-top>
+
  <!--== Start Product Quick View Modal ==-->
-        <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="product-quick-view-content">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"><span>×</span></button>
-                            <div class="row row-gutter-0">
-                                <div class="col-lg-6">
-                                    <div class="single-product-slider">
-                                        <div class="single-product-thumb">
-                                            <div class="swiper single-product-quick-view-slider">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide">
-                                                        <div class="thumb-item">
-                                                            <img src="assets/images/shop/details/m1.jpg" alt="Image" width="640" height="710">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="thumb-item">
-                                                            <img src="assets/images/shop/details/m2.jpg" alt="Image" width="640" height="710">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="thumb-item">
-                                                            <img src="assets/images/shop/details/m3.jpg" alt="Image" width="640" height="710">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Add Arrows -->
-                                                <div class="swiper-button-next"></div>
-                                                <div class="swiper-button-prev"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="product-details-content pt-3">
-                                        <h3 class="product-details-title">Casual Women pants</h3>
-                                        <div class="product-details-review">
-                                            <div class="product-review-icon">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <button type="button" class="product-review-show">156 reviews</button>
-                                        </div>
-                                        <p class="product-details-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, repellendus.</p>
-                                        <div class="product-details-color-list">
-                                            <h4>Color:</h4>
-                                            <div class="color-list-check">
-                                                <input class="form-check-input bg-red" type="radio" name="flexRadioColorList" id="colorLista1">
-                                                <label class="form-check-label" for="colorLista1">Red</label>
-                                            </div>
-                                            <div class="color-list-check">
-                                                <input class="form-check-input bg-green" type="radio" name="flexRadioColorList" id="colorLista2" checked>
-                                                <label class="form-check-label" for="colorLista2">Green</label>
-                                            </div>
-                                            <div class="color-list-check me-0">
-                                                <input class="form-check-input bg-blue" type="radio" name="flexRadioColorList" id="colorLista3">
-                                                <label class="form-check-label" for="colorLista3">Blue</label>
-                                            </div>
-                                        </div>
-                                        <div class="product-details-pro-qty">
-                                            <h4>QTY :</h4>
-                                            <div class="pro-qty">
-                                                <input type="text" title="Quantity" value="01">
-                                            </div>
-                                        </div>
-                                        <div class="product-details-price">$550.00 <span class="price-old">$650.00</span></div>
-                                        <div class="product-details-action">
-                                            <button type="button" class="product-action-btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
-                                            <button type="button" class="product-action-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                                <i class="fa fa-heart"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+      <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="product-quick-view-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"><span>×</span></button>
+                <div class="row row-gutter-0">
+                  <div class="col-lg-6">
+                    <div class="single-product-slider">
+                      <div class="single-product-thumb">
+                        <div class="thumb-item">
+                          <img [src]="selectedProduct?.imageUrl" alt="{{ selectedProduct?.name }}" width="640" height="710">
                         </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="product-details-content pt-3">
+                      <h3 class="product-details-title">{{ selectedProduct?.name }}</h3>
+                      <p class="product-details-desc">{{ selectedProduct?.description }}</p>
+                      <div class="product-details-price">{{ selectedProduct?.pricePerUnit }} DT</div>
+                      <div class="product-details-action">
+                        <button type="button" class="product-action-btn" data-bs-dismiss="modal">Add to cart</button>
+                        <button type="button" class="product-action-wishlist">
+                          <i class="fa fa-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </aside>
+          </div>
+        </div>
+      </aside>
         <!--== End Product Quick View Modal ==-->
 
         <!--== Start Product Quick Wishlist Modal ==-->

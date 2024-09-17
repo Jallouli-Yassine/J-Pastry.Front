@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/Auth/auth.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 
 @Component({
@@ -9,7 +10,13 @@ import { AuthService } from 'src/app/services/Auth/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private authService: AuthService, private r: Router) { }
+  user: any;
+  
+  ngOnInit(): void {
+    // Get the current user from the UserService
+    this.user = this.userService.getUser();
+  }
+  constructor(private userService: UserService,private authService: AuthService, private r: Router) { }
 
   onLogout(): void {
     this.authService.logout(); // Call the logout method from your service

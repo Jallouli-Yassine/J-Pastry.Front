@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './public/home/home.component';
-import { ShopComponent } from './private/shop/shop.component';
-import { LoginRegisterComponent } from './public/login-register/login-register.component';
-import { PageNotFoundComponent } from './public/page-not-found/page-not-found.component';
-import { ContactComponent } from './private/contact/contact.component';
-import { ShopAllPacksComponent } from './private/shop-all-packs/shop-all-packs.component';
-import { ProfileComponent } from './private/profile/profile.component';
+import { HomeComponent } from './components/public/home/home.component';
+import { ShopComponent } from './components/private/shop/shop.component';
+import { LoginRegisterComponent } from './components/public/login-register/login-register.component';
+import { PageNotFoundComponent } from './components/public/page-not-found/page-not-found.component';
+import { ContactComponent } from './components/private/contact/contact.component';
+import { ShopAllPacksComponent } from './components/private/shop-all-packs/shop-all-packs.component';
+import { ProfileComponent } from './components/private/profile/profile.component';
 import { authGuard, authReverseGuard } from './auth.guard';
 import { AddProductComponent } from './components/private/product/add-product/add-product.component';
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { AllProductsComponent } from './components/private/product/all-products/all-products.component';
+import {TableProductComponent} from "./components/private/product/table-product/table-product.component";
 
 const routes: Routes = [
   {
@@ -46,9 +49,25 @@ const routes: Routes = [
     canActivate: [authGuard],  // Protect this route with the authGuard
   },
   {
-    path: 'addProduct',
-    component: AddProductComponent,
-    //canActivate: [authGuard],  // Protect this route with the authGuard
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'all-products',
+        component: AllProductsComponent,
+        children: [
+            {
+                path: '',
+                component: TableProductComponent,
+            },
+          {
+            path: 'addProduct',
+            component: AddProductComponent,
+          }
+        ]
+      },
+    ]
   },
   {
     path: '**',
