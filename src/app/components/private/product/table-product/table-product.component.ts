@@ -14,6 +14,7 @@ export class TableProductComponent {
 
   ngOnInit(): void {
     this.loadProducts();
+    console.log("deheeeeeeee:"+this.products);
   }
 
   // Load products from the service

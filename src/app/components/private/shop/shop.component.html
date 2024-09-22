@@ -57,7 +57,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item">
                                 <a class="product-thumb" href="shop-single-product.html">
-                                    <img src="assets/images/shop/p3.jpg" style="height: 190px;" alt="Image-HasTech">
+                                    <img *ngIf="p.imageUrl" [src]="'http://localhost:3000/uploads/' + p.imageUrl" loading="lazy" style="height: 190px;" alt="HasTech">
                                 </a>
                                 <span class="badges">New</span>
                                 <div class="product-action">
@@ -134,7 +134,7 @@
                     <div class="single-product-slider">
                       <div class="single-product-thumb">
                         <div class="thumb-item">
-                          <img [src]="selectedProduct?.imageUrl" alt="{{ selectedProduct?.name }}" width="640" height="710">
+                            <img *ngIf="selectedProduct?.imageUrl" [src]="'http://localhost:3000/uploads/' + selectedProduct.imageUrl" width="640" height="710">
                         </div>
                       </div>
                     </div>

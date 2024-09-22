@@ -13,11 +13,11 @@ export class LoginComponent {
 
 
   constructor(private fb: FormBuilder, private authService: AuthService, private r: Router) {
-    let formControls = {
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-    }
-    this.credForm = this.fb.group(formControls);
+    this.credForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]], // Add email validator as well
+      password: ['', Validators.required]
+    });
+    
     // console.log(this.addFoyerForm);
 
   }

@@ -12,7 +12,8 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class AddProductComponent {
   productForm!: FormGroup;
   categories: any[] = [];  // Array to store categories
-  selectedFile: File | null = null;  // Store the selected file
+  imageUrl!: string;
+  selectedFile!: File;
   fileError: string | null = null;   // To show file errors, if any
 
   constructor(
@@ -28,10 +29,12 @@ export class AddProductComponent {
       unit: new FormControl('', Validators.required),
       stock: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)  // Category form control
+      
     });
   }
 
   get category() { return this.productForm.get('category'); }
+  get ImageP() { return this.productForm.get('imageUrl'); }
 
 
   ngOnInit(): void {
@@ -55,7 +58,21 @@ export class AddProductComponent {
   // Submit the form and add the product
   addProduct(): void {
     if (this.productForm.valid) {
-      this.productService.addProduct(this.productForm.value,this.category?.value).subscribe({
+      
+      const formData = new FormData();
+    
+      // Append product data fields to the FormData object
+      formData.append('name', this.productForm.get('name')!.value);
+      formData.append('description', this.productForm.get('description')!.value);
+      formData.append('pricePerUnit', this.productForm.get('pricePerUnit')!.value);
+      formData.append('unit', this.productForm.get('unit')!.value);
+      formData.append('stock', this.productForm.get('stock')!.value);
+      formData.append('category', this.productForm.get('category')!.value);
+
+      // Append the image file
+      formData.append('imageUrl', this.selectedFile);
+
+      this.productService.addProduct(formData,this.category?.value).subscribe({
         next: (response) => {
           console.log('Product added successfully:', response);
           this.router.navigate(['/shop']);  // Redirect after successful product addition
@@ -64,22 +81,14 @@ export class AddProductComponent {
           console.error('Error adding product:', error);
         }
       });
+            
     }
   }
 
 
-  onFileSelected(event: Event): void {
-    const fileInput = event.target as HTMLInputElement;
-    if (fileInput.files && fileInput.files.length > 0) {
-      this.selectedFile = fileInput.files[0];
-
-      // Check if the file is an image and has a valid size (optional)
-      if (!this.selectedFile.type.startsWith('image/') || this.selectedFile.size > 5 * 1024 * 1024) {
-        this.fileError = 'Please select an image smaller than 5MB.';
-        this.selectedFile = null;
-      } else {
-        this.fileError = null;
-      }
-    }
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+    this.imageUrl = URL.createObjectURL(this.selectedFile);
   }
+
 }

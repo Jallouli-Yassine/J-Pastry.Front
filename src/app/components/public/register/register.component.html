@@ -19,6 +19,31 @@
                     characters</small>
             </div>
 
+
+            <!-- Unit Select Field -->
+            <div class="login-register-input col-3">
+                <select class="form-control" formControlName="role">
+                    <option value="" disabled>Select Your Role</option>
+                    <option value="user">User</option>
+                    <option value="agent">Agent</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <div *ngIf="roleUser?.touched && roleUser?.invalid">
+                    <small *ngIf="roleUser?.errors?.['required']" class="text-danger">Role is required</small>
+                </div>
+            </div>
+
+            <!-- Unit Select Field -->
+            <div class="login-register-input col-4">
+                <select class="form-control" formControlName="gender">
+                    <option value="" disabled>Select Your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div *ngIf="genderUser?.touched && genderUser?.invalid">
+                    <small *ngIf="genderUser?.errors?.['required']" class="text-danger">Gender is required</small>
+                </div>
+            </div>
             <!--
            <div class="login-register-input">
           <input type="number" name="user-name" placeholder="phone" />
@@ -26,7 +51,7 @@
 -->
 
             <div class="login-register-input">
-                <input formControlName="email" type="text" name="user-name" placeholder="E-mail address" />
+                <input formControlName="email" type="email" name="user-name" placeholder="E-mail address" />
             </div>
             <div *ngIf="emailUser?.touched && emailUser?.invalid">
                 <small *ngIf="emailUser?.errors!['required']" class="text-danger">email is required <br></small>
@@ -41,7 +66,7 @@
             </div>
 
             <div class="login-register-input">
-                <input formControlName="passwordConfirm" type="passwordConfirm" name="user-password"
+                <input formControlName="passwordConfirm" type="password" name="user-password"
                     placeholder="passwordConfirm" />
             </div>
 

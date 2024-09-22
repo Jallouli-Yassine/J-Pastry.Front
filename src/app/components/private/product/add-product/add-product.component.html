@@ -24,6 +24,20 @@
                     </div>
                   </div>
 
+                                    <!-- Unit Select Field -->
+                                    <div class="form-input-item col-md-6">
+                                      <select class="form-control" formControlName="unit">
+                                        <option value="" disabled>Select Unit</option>
+                                        <option value="kg">Kg</option>
+                                        <option value="piece">Piece</option>
+                                        <option value="liter">Liter</option>
+                                        <option value="pack">Pack</option>
+                                      </select>
+                                      <div *ngIf="productForm.get('unit')?.touched && productForm.get('unit')?.invalid">
+                                        <small *ngIf="productForm.get('unit')?.errors?.['required']" class="text-danger">Unit is required</small>
+                                      </div>
+                                    </div>
+
                   <!-- Price Per Unit Field -->
                   <div class="form-input-item col-md-6">
                     <input class="form-control" type="number" formControlName="pricePerUnit" placeholder="Price per Unit" />
@@ -32,19 +46,7 @@
                     </div>
                   </div>
 
-                  <!-- Unit Select Field -->
-                  <div class="form-input-item col-md-6">
-                    <select class="form-control" formControlName="unit">
-                      <option value="" disabled>Select Unit</option>
-                      <option value="kg">Kg</option>
-                      <option value="piece">Piece</option>
-                      <option value="liter">Liter</option>
-                      <option value="pack">Pack</option>
-                    </select>
-                    <div *ngIf="productForm.get('unit')?.touched && productForm.get('unit')?.invalid">
-                      <small *ngIf="productForm.get('unit')?.errors?.['required']" class="text-danger">Unit is required</small>
-                    </div>
-                  </div>
+
 
                   <!-- Stock Field -->
                   <div class="form-input-item col-md-6">
@@ -55,11 +57,14 @@
                   </div>
 
                   <!-- Image Upload Field -->
+
                   <div class="form-input-item col-md-6">
-                    <input class="form-control" type="file" (change)="onFileSelected($event)" />
-                    <div *ngIf="fileError" class="text-danger">
-                      <small>{{ fileError }}</small>
-                    </div>
+                    <input type="file" formControlName="image" (change)="onFileSelected($event)">
+                    <!-- Display image preview if needed -->
+                    <img width="250px" [src]="imageUrl" *ngIf="imageUrl" alt="pic">
+                  </div>
+                  <div *ngIf="ImageP?.touched && ImageP?.invalid">
+                    <small *ngIf="ImageP?.errors!['required']" class="text-danger">Image is required <br></small>
                   </div>
 
                   <!-- Category Select Field -->

@@ -12,7 +12,7 @@
         <input formControlName="email" type="text" name="user-name" placeholder="email address" />
       </div>
       <div *ngIf="email?.touched && email?.invalid">
-        <small *ngIf="email?.errors!['required']" class="text-danger">email is required</small>
+        <small *ngIf="email?.errors?.['email']" class="text-danger">Please enter a valid email</small>
       </div>
       <div class="login-register-input">
         <input formControlName="password" type="password" name="user-password" placeholder="Password" />
@@ -24,8 +24,9 @@
 
       </div>
       <div *ngIf="password?.touched && password?.invalid">
-        <small *ngIf="password?.errors!['required']" class="text-danger">password is required</small>
+        <small *ngIf="password?.errors?.['required']" class="text-danger">Password is required</small>
       </div>
+      
 
       <div class="remember-me-btn">
         <input type="checkbox" />

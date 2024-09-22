@@ -19,9 +19,11 @@ export class RegisterComponent {
         Validators.pattern("[a-zA-Z]*"),
         Validators.minLength(3)
       ]),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required,Validators.email]),
       password: new FormControl('', Validators.required),
       passwordConfirm: new FormControl('', Validators.required),
+      role: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required),
 
     }
 
@@ -35,6 +37,8 @@ export class RegisterComponent {
   get emailUser() { return this.addUserForm.get('email'); }
   get passwordUser() { return this.addUserForm.get('password'); }
   get confPassUser() { return this.addUserForm.get('passwordConfirm'); }
+  get roleUser() { return this.addUserForm.get('role'); }
+  get genderUser() { return this.addUserForm.get('gender'); }
 
   save() {
     if (this.addUserForm.valid) {

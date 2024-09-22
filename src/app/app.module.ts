@@ -21,7 +21,7 @@ import { MapComponent } from './components/private/map/map.component';
 import { ShopAllPacksComponent } from './components/private/shop-all-packs/shop-all-packs.component';
 import { ProfileComponent } from './components/private/profile/profile.component';
 import { HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { AddProductComponent } from './components/private/product/add-product/add-product.component';
@@ -60,7 +60,7 @@ import { TableProductComponent } from './components/private/product/table-produc
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    //  FormsModule,
     ReactiveFormsModule
   ],
   providers: [],
