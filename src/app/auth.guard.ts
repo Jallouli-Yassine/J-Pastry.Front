@@ -1,27 +1,16 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';  // Use Angular's inject function
-import { UserService } from './services/user/user.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
-
-  const userService = inject(UserService);  // Inject your user service
   const token = localStorage.getItem('token');  // Check for token in localStorage
   const router = inject(Router);  // Inject the Router instance
 
-  const user = userService.getUser();  // Get the logged-in user
-
-
   if (token) {
-    if (user.etat === false) {
-      // If the user's etat is false, redirect to the waitAdminComponent
-      alert('Your account is waiting for admin approval, you will be notified with email when your account is approved.');
-      return false;
-    }
-    // If token exists and user's etat is true, allow access
+    // If the token exists, allow access to the route
     return true;
   } else {
     // If no token, redirect to the login page
-    router.navigate(['/login-register']);
+    router.navigate(['/login-register']);  // Redirect to login
     return false;
   }
 };

@@ -145,7 +145,7 @@
                       <p class="product-details-desc">{{ selectedProduct?.description }}</p>
                       <div class="product-details-price">{{ selectedProduct?.pricePerUnit }} DT</div>
                       <div class="product-details-action">
-                        <button type="button" class="product-action-btn" data-bs-dismiss="modal">Add to cart</button>
+                        <button (click)="addItemToCart(selectedProduct._id, 'product')" type="button" class="product-action-btn" data-bs-dismiss="modal">Add to cart</button>
                         <button type="button" class="product-action-wishlist">
                           <i class="fa fa-heart"></i>
                         </button>

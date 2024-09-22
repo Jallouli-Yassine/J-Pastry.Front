@@ -48,7 +48,7 @@
             data-bs-target="#offcanvasWithCartSidebar"
             aria-controls="offcanvasWithCartSidebar"
           >
-            <b style="color: #733729">totalItems {{ cart?.products.length || 0 }}</b> <!-- Safe navigation and fallback -->
+            <b style="color: #733729">totalItems {{ cart?.products?.length || 0 }}</b> <!-- Safe navigation and fallback -->
             <span class="cart-icon">
               <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -79,7 +79,7 @@
     <div class="cart-items">
       <ng-container *ngIf="cart">
         <div *ngFor="let item of cart.products">
-          <img [src]="item.product.imageUrl" alt="{{item.product.name}}" />
+          <img width="40px" *ngIf="item?.product.imageUrl" [src]="'http://localhost:3000/uploads/' + item?.product.imageUrl" alt="product img" />
           <p>{{item.product.name}} x {{item.quantity}} = {{item.quantity * item.product.pricePerUnit}} TND</p>
         </div>
         <div *ngFor="let pack of cart.packs">
