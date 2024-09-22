@@ -87,6 +87,12 @@
           <p>{{pack.pack.name}} x {{pack.quantity}} = {{pack.quantity * pack.pack.totalPrice}} TND</p>
         </div>
         <p>Total: {{ cart?.totalPrice || 0 }} TND</p> <!-- Safe navigation and fallback for total price -->
+        <!-- Place order button -->
+  <button (click)="placeOrder()">Place Order</button>
+
+  <!-- Success and error messages -->
+  <div *ngIf="orderSuccess" class="success-message">{{ orderSuccess }}</div>
+  <div *ngIf="orderError" class="error-message">{{ orderError }}</div>
       </ng-container>
     </div>
   </div>
