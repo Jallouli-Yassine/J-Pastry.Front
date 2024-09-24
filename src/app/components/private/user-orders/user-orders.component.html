@@ -1,0 +1,30 @@
+<div class="myaccount-content">
+    <h3>Orders</h3>
+    <div class="myaccount-table table-responsive text-center">
+      <table class="table table-bordered" *ngIf="orders && orders.length > 0">
+        <thead class="thead-light">
+          <tr>
+            <th>Order</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through the orders and display them -->
+          <tr *ngFor="let order of orders; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ order.createdAt | date: 'mediumDate' }}</td>
+            <td>{{ order.orderStatus || 'Pending' }}</td>
+            <td>{{ order.totalPrice | currency }}</td>
+            <td><a [routerLink]="['/order-details', order._id]" class="check-btn sqr-btn">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="!orders || orders.length === 0" class="text-center">
+        <p>No orders found.</p>
+      </div>
+    </div>
+  </div>
+  

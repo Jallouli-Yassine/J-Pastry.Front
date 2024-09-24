@@ -1,0 +1,79 @@
+<table class="table table-bordered" *ngIf="orders && orders.length > 0">
+  <thead class="thead-light">
+    <tr>
+      <th>Order</th>
+      <th>Date</th>
+      <th>User</th>
+      <th>Status</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ order.createdAt | date : "mediumDate" }}</td>
+      <td>{{ order.user.name }}</td>
+      <td>{{ order.orderStatus || "Pending" }}</td>
+      <td>{{ order.totalPrice | currency }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-success action-btn-quick-view"
+          data-bs-toggle="modal"
+          data-bs-target="#action-QuickViewModal"
+          (click)="onViewOrder(order)"
+        >
+          <i class="fa fa-expand"></i> View
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--== Start Product Quick View Modal ==-->
+<aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="product-quick-view-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"><span>×</span></button>
+            <div class="row row-gutter-0">
+              <div class="col-lg-6">
+                <div class="single-product-slider">
+                  <div class="single-product-thumb">
+                    <div class="thumb-item">
+                      <!-- Loop through all products and display thumbnails -->
+                      <div class="product-thumbnails" *ngFor="let item of selectedOrder?.products">
+                        <img *ngIf="item.product?.imageUrl" 
+                             [src]="item.product.imageUrl" 
+                             alt="{{item.product.name}}" 
+                             class="img-thumbnail" 
+                             width="100" 
+                             height="100">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="product-details-content pt-3">
+                  <h3 class="product-details-title">Order Details</h3>
+                  <div *ngFor="let item of selectedOrder?.products">
+                    <h5>{{ item.product.name }}</h5>
+                    <p>{{ item.product.description }}</p>
+                    <p>Price per unit: {{ item.product.pricePerUnit }} DT</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <hr>
+                  </div>
+                  <div>Total Price: {{ selectedOrder?.totalPrice }} DT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!--== End Product Quick View Modal ==-->
+  

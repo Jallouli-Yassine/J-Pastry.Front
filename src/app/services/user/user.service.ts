@@ -15,11 +15,13 @@ export class UserService {
     return this.user;
   }
 
-  // Load user from localStorage when the app starts
-  private loadUserFromLocalStorage(): void {
+  // Load user from localStorage when the app starts or after login
+  loadUserFromLocalStorage(): void {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       this.user = JSON.parse(storedUser);
+    } else {
+      this.user = null;
     }
   }
 }

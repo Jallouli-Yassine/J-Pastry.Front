@@ -28,6 +28,9 @@ import { AddProductComponent } from './components/private/product/add-product/ad
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { AllProductsComponent } from './components/private/product/all-products/all-products.component';
 import { TableProductComponent } from './components/private/product/table-product/table-product.component';
+import { UserOrdersComponent } from './components/private/user-orders/user-orders.component';
+import { UserProfileAlertComponent } from './components/private/user-profile-alert/user-profile-alert.component';
+import { OrdersTableComponent } from './components/private/dashboard/orders-table/orders-table.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { TableProductComponent } from './components/private/product/table-produc
     AddProductComponent,
     DashboardComponent,
     AllProductsComponent,
-    TableProductComponent
+    TableProductComponent,
+    UserOrdersComponent,
+    UserProfileAlertComponent,
+    OrdersTableComponent
   ],
   imports: [
     BrowserModule,
