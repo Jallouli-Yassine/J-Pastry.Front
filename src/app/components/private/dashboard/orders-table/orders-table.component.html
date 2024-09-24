@@ -1,3 +1,11 @@
+<div class="status-buttons">
+    <!-- Les boutons qui changent le status -->
+    <button class="btn" (click)="changeStatus('pending')">Pending</button>
+    <button class="btn" (click)="changeStatus('confirmed')">Confirmed</button>
+    <button class="btn" (click)="changeStatus('delivered')">Delivered</button>
+    <button class="btn" (click)="changeStatus('cancelled')">Cancelled</button>
+  </div>
+  
 <table class="table table-bordered" *ngIf="orders && orders.length > 0">
   <thead class="thead-light">
     <tr>
@@ -26,6 +34,11 @@
         >
           <i class="fa fa-expand"></i> View
         </button>
+         <!-- Buttons to confirm or refuse the order -->
+         <div *ngIf="order.orderStatus === 'pending'">
+            <button (click)="confirmOrder(order._id)" class="btn btn-success">Confirmer</button>
+            <button (click)="refuseOrder(order._id)" class="btn btn-danger">Refuser</button>
+          </div>
       </td>
     </tr>
   </tbody>
@@ -42,16 +55,22 @@
               <div class="col-lg-6">
                 <div class="single-product-slider">
                   <div class="single-product-thumb">
-                    <div class="thumb-item">
-                      <!-- Loop through all products and display thumbnails -->
-                      <div class="product-thumbnails" *ngFor="let item of selectedOrder?.products">
-                        <img *ngIf="item.product?.imageUrl" 
-                             [src]="item.product.imageUrl" 
-                             alt="{{item.product.name}}" 
-                             class="img-thumbnail" 
-                             width="100" 
-                             height="100">
-                      </div>
+                    <!-- Display user information here -->
+                    <div class="user-info">
+                      <h4>User Information</h4>
+                      <p><strong>Name:</strong> {{ selectedOrder?.user?.name }}</p>
+                      <p><strong>Email:</strong> {{ selectedOrder?.user?.email }}</p>
+                      <p><strong>Phone:</strong> {{ selectedOrder?.user?.tel }}</p>
+                      <p><strong>Gender:</strong> {{ selectedOrder?.user?.gender }}</p>
+                    </div>
+                    <!-- Loop through all products and display thumbnails -->
+                    <div class="product-thumbnails">
+                      <img *ngIf="selectedOrder?.user.photo" 
+                           [src]="'http://localhost:3000/uploads/user/' + selectedOrder.user.photo" 
+                           alt="{{selectedOrder.user.photo}}" 
+                           class="img-thumbnail" 
+                           width="100" 
+                           height="100">
                     </div>
                   </div>
                 </div>
@@ -64,6 +83,12 @@
                     <p>{{ item.product.description }}</p>
                     <p>Price per unit: {{ item.product.pricePerUnit }} DT</p>
                     <p>Quantity: {{ item.quantity }}</p>
+                    <img *ngIf="item.product?.imageUrl" 
+                      [src]="'http://localhost:3000/uploads/' + item.product.imageUrl"
+                      alt="{{item.product.name}}" 
+                      class="img-thumbnail" 
+                      width="200" 
+                      height="200">
                     <hr>
                   </div>
                   <div>Total Price: {{ selectedOrder?.totalPrice }} DT</div>
