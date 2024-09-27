@@ -31,6 +31,8 @@ import { TableProductComponent } from './components/private/product/table-produc
 import { UserOrdersComponent } from './components/private/user-orders/user-orders.component';
 import { UserProfileAlertComponent } from './components/private/user-profile-alert/user-profile-alert.component';
 import { OrdersTableComponent } from './components/private/dashboard/orders-table/orders-table.component';
+import { EmailFormPassForgetComponent } from './components/public/email-form-pass-forget/email-form-pass-forget.component';
+import { NewPasswordComponent } from './components/public/new-password/new-password.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { OrdersTableComponent } from './components/private/dashboard/orders-tabl
     TableProductComponent,
     UserOrdersComponent,
     UserProfileAlertComponent,
-    OrdersTableComponent
+    OrdersTableComponent,
+    EmailFormPassForgetComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,

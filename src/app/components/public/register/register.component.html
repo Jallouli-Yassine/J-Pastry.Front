@@ -19,6 +19,14 @@
                     characters</small>
             </div>
 
+            <div class="login-register-input">
+                <input formControlName="tel" type="tel" name="user-tel" placeholder="Phone number" />
+            </div>
+            <div *ngIf="telUser?.touched && telUser?.invalid">
+                <small *ngIf="telUser?.errors!['required']" class="text-danger">Phone number is required</small>
+                <small *ngIf="telUser?.errors!['pattern']" class="text-danger">Invalid phone number format</small>
+            </div>
+            
 
             <!-- Unit Select Field -->
             <div class="login-register-input col-3">

@@ -15,6 +15,8 @@ import { TableProductComponent } from './components/private/product/table-produc
 import { UserOrdersComponent } from './components/private/user-orders/user-orders.component';
 import { UserProfileAlertComponent } from './components/private/user-profile-alert/user-profile-alert.component';
 import { OrdersTableComponent } from './components/private/dashboard/orders-table/orders-table.component';
+import { EmailFormPassForgetComponent } from './components/public/email-form-pass-forget/email-form-pass-forget.component';
+import { NewPasswordComponent } from './components/public/new-password/new-password.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'emailFP',
+    component: EmailFormPassForgetComponent,
+  },
+  {
+    path: 'newPassword',
+    component: NewPasswordComponent,
   },
   {
     path: 'shop',
@@ -67,7 +77,7 @@ const routes: Routes = [
       {
         path: 'orders',
         component: OrdersTableComponent,
-      }
+      },
     ],
   },
   {

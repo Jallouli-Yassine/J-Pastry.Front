@@ -19,20 +19,21 @@ export class RegisterComponent {
         Validators.pattern("[a-zA-Z]*"),
         Validators.minLength(3)
       ]),
-      email: new FormControl('', [Validators.required,Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
       passwordConfirm: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
-
+      tel: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[0-9]{8,15}$') // Phone number validation pattern
+      ])
     }
 
-
     this.addUserForm = this.fb.group(formControls);
-    // console.log(this.addFoyerForm);
-
   }
 
+  get telUser() { return this.addUserForm.get('tel'); }
   get nomUser() { return this.addUserForm.get('name'); }
   get emailUser() { return this.addUserForm.get('email'); }
   get passwordUser() { return this.addUserForm.get('password'); }
