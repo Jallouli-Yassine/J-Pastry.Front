@@ -2,3 +2,11 @@
   margin-bottom: 33px;
   margin-top: -50px;
 }
+
+.bordIMG{
+  border :2px solid #FFFFFF;
+} 
+
+.price-old{
+  color: #D9AE79 !important;
+}
